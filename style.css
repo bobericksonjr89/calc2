@@ -1,0 +1,64 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+em,
+img,
+strong,
+b,
+u,
+i,
+ol,
+ul,
+li,
+footer,
+header {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+/******************
+******************/
+
+html {
+  --bdazzled-blue: #3d5a80;
+  --dark-sky-blue: #98c1d9;
+  --light-cyan: #e0fbfc;
+  --burnt-sienna: #ee6c4d;
+  --gun-metal: #293241;
+}
+
+body {
+  background-color: var(--dark-sky-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  height: 600px;
+  width: 400px;
+  border: 4px solid var(--gun-metal);
+  border-radius: 30px;
+  background-color: var(--light-cyan);
+}
