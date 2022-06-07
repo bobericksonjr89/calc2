@@ -44,6 +44,12 @@ equalsButton.addEventListener("click", () => {
   clearDisplay();
 
   const result = operate(memory.operator, +memory.num1, +memory.num2);
+  if (result === "ERROR") {
+    memory.result = "ERROR";
+    displayResult(result);
+    clearMemory();
+    return;
+  }
   memory.num1 = result;
   memory.display = result;
   memory.displayResult = true;
@@ -78,6 +84,12 @@ operatorButtons.forEach((button) => {
       console.log(memory);
       memory.num2 = memory.display;
       const result = operate(memory.operator, +memory.num1, +memory.num2);
+      if (result === "ERROR") {
+        memory.result = "ERROR";
+        displayResult(result);
+        clearMemory();
+        return;
+      }
       memory.num1 = result;
       memory.display = result;
       memory.displayResult = true;
@@ -148,6 +160,9 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+  if (b === 0) {
+    return "ERROR";
+  }
   return a / b;
 }
 
