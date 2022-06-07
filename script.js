@@ -59,6 +59,15 @@ operatorButtons.forEach((button) => {
       return;
     }
 
+    if (memory.equalsClicked) {
+      memory.num2 = null;
+      memory.operator = null;
+      memory.display = null;
+      memory.displayResult = false;
+      memory.equalsClicked = false;
+      clearDisplay();
+    }
+
     if (!memory.num1) {
       memory.num1 = memory.display;
       clearDisplay();
