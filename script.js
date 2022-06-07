@@ -34,10 +34,10 @@ clearButton.addEventListener("click", () => {
 });
 
 equalsButton.addEventListener("click", () => {
-  if (!memory.display || !memory.num1) {
+  if (memory.display === null || memory.num1 === null) {
     return;
   }
-  if (!memory.num2) {
+  if (memory.num2 === null) {
     memory.num2 = memory.display;
   }
   memory.display = null;
@@ -55,7 +55,7 @@ equalsButton.addEventListener("click", () => {
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => {
     console.log(memory);
-    if (!memory.display) {
+    if (memory.display === null) {
       return;
     }
 
@@ -68,7 +68,7 @@ operatorButtons.forEach((button) => {
       clearDisplay();
     }
 
-    if (!memory.num1) {
+    if (memory.num1 === null) {
       memory.num1 = memory.display;
       clearDisplay();
       memory.display = null;
@@ -124,10 +124,11 @@ function clearMemory() {
   memory.num2 = null;
   memory.operator = null;
   memory.displayResult = false;
+  memory.equalsClicked = false;
 }
 
 function saveToDisplay(number) {
-  if (!memory.display) {
+  if (memory.display === null || memory.display === 0) {
     memory.display = number.toString();
     return;
   }
